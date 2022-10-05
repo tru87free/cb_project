@@ -21,10 +21,24 @@ let result3 = mySome(['soup', 'noodles', 'bike', 'ship'], function(ele) {
     return ele.length === 4;
 });
 console.log(result3);   // true
+
+Write a function `mySome` that accepts an array and a callback as an argument.
+The function should call the callback for each element of the array, passing in
+the element and its index. The function should return a boolean
+indicating whether or not at least one element of the array returns true when passed
+into the callback.
+
 *******************************************************************************/
 
 function mySome(array, cb) {
-    // Your code here
+
+    for (let i = 0; i < array.length; i++){
+        let el = array[i]
+        if (cb(el, i, array)){
+            return true
+        }
+    } return false
+
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
