@@ -43,7 +43,17 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 *******************************************************************************/
 
 function selectiveMap(array, selector, mapper) {
-    // Your code here
+    let arr = [];
+    for (let i = 0; i < array.length; i++) {
+        let nums = array[i]
+        if(selector(nums)){
+            arr.push(mapper(nums))
+        }
+        else {
+            arr.push(nums)
+        }
+    }
+    return arr
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
